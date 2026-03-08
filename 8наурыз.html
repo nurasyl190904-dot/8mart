@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8 Наурыз Instagram Post</title>
+
+<style>
+
+body{
+background:#fafafa;
+font-family:Arial, sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.post{
+width:360px;
+background:white;
+border:1px solid #dbdbdb;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.header{
+display:flex;
+align-items:center;
+padding:10px;
+}
+
+.avatar{
+width:35px;
+height:35px;
+border-radius:50%;
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+margin-right:10px;
+}
+
+.username{
+font-weight:bold;
+}
+
+.image img{
+width:100%;
+display:block;
+}
+
+.actions{
+padding:10px;
+font-size:22px;
+}
+
+.heart{
+cursor:pointer;
+}
+
+.likes{
+font-weight:bold;
+padding:0 10px;
+}
+
+.caption{
+padding:8px 10px;
+font-size:14px;
+}
+
+.comments{
+padding:10px;
+border-top:1px solid #eee;
+max-height:120px;
+overflow:auto;
+font-size:14px;
+}
+
+.comment-input{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+.comment-input input{
+flex:1;
+padding:10px;
+border:none;
+outline:none;
+}
+
+.comment-input button{
+background:#3897f0;
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+}
+
+.comment{
+margin-bottom:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="post">
+
+<div class="header">
+<div class="avatar"></div>
+<div class="username">S_N 19</div>
+</div>
+
+<div class="image">
+<img src="8mart.jpg">
+</div>
+
+<div class="actions">
+<span id="heart">🤍</span>
+💬 ✈️
+</div>
+
+<div class="likes">
+<span id="likeCount">999999</span> likes
+</div>
+
+<div class="caption">
+<b>S_N 19</b><br>
+Құрметті Динара апай! 😍
+Сізді <b>8 наурыз</b> мерекесімен шын жүректен құттықтаймын! 🌹
+Еңбегіңіз жемісті болып, шәкірттеріңіздің құрметіне бөлене беріңіз.
+Деніңіз сау, отбасыңыз аман, өміріңіз бақытқа толы болсын!
+
+<br> Құрметті сыныптың арулары! 🌸  
+Сіздерді <b>8 Наурыз</b> – мерекесімен шын жүректен құттықтаймын! 💐
+Жүректеріңіз мейірімге толы болып, жүздеріңізден күлкі кетпесін.
+Әр күндеріңіз қуанышқа, табысқа және бақытқа толы болсын! 💐 
+<br> <b>P/S S.Nurasyl</b>
+</div>
+
+<div id="comments" class="comments">
+</div>
+
+<div class="comment-input">
+<input id="commentText" placeholder="Комментарий жазу...">
+<button onclick="addComment()">Жіберу</button>
+</div>
+
+</div>
+
+<script>
+
+let liked=false
+let likes=999999
+
+document.getElementById("heart").onclick=function(){
+
+if(!liked){
+likes++
+this.textContent="❤️"
+liked=true
+}else{
+likes--
+this.textContent="🤍"
+liked=false
+}
+
+document.getElementById("likeCount").textContent=likes
+
+}
+
+function addComment(){
+
+let text=document.getElementById("commentText").value
+
+if(text.trim()=="") return
+
+let div=document.createElement("div")
+div.className="comment"
+div.innerHTML="<b>user</b> "+text
+
+document.getElementById("comments").appendChild(div)
+
+document.getElementById("commentText").value=""
+
+}
+
+</script>
+
+</body>
+</html>
